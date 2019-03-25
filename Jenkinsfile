@@ -9,7 +9,6 @@ pipeline {
                     remote.name = 'root'
                     remote.host = '192.168.162.3'
                     remote.user = 'root'
-                    #remote.password = 'password'
                     remote.allowAnyHosts = true
                            stage('Remote SSH') {
                             sshCommand remote: remote, command: "docker build -t django_ivaylopetrov07:latest ."
