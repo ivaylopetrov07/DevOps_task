@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh "ssh root@192.168.162.3"
-                sh " docker build -t django_ivaylopetrov07:latest ." 
+                sh "ssh root@192.168.162.3 && docker build -t django_ivaylopetrov07:latest ." 
             }
         }
        stage('Tag') {
