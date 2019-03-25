@@ -5,15 +5,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                    def remote = [:]
-                    remote.name = 'root'
-                    remote.host = '192.168.162.3'
-                    remote.user = 'root'
-                    remote.allowAnyHosts = true
-                           stage('Remote SSH') {
-                            sshCommand remote: remote, command: "docker build -t django_ivaylopetrov07:latest ."
-                               sshCommand remote: remote, command: "for i in {1..5}; do echo -n \"Loop \$i \"; date ; sleep 1; done"
-    } 
+                sh " ssh -tt root@192.168.162.3"
+                sh " docker build -t django_ivaylopetrov07:latest ." 
             }
         }
        stage('Tag') {
@@ -37,3 +30,5 @@ pipeline {
         }
     }
 }
+
+
