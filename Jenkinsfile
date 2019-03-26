@@ -5,7 +5,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh " ssh -tt root@192.168.162.3"
                 sh " docker build -t django_ivaylopetrov07:latest ." 
             }
         }
