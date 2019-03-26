@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh "ssh roo@192.168.162.3 && docker run -p 8000:8000 -d registrydomain.com:5000/django_ivaylopetrov07" 
+                sh "ssh root@192.168.162.3 && docker run -p 8000:8000 -d registrydomain.com:5000/django_ivaylopetrov07" 
             }
         }
     }
