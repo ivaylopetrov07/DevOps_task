@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh "docker run -p 8000:8000 -d registrydomain.com:5000/django_ivaylopetrov07" 
+                sh "docker run -p 8000:8000 -d --name ivo registrydomain.com:5000/django_ivaylopetrov07" 
             }
         }
     }
