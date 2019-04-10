@@ -24,7 +24,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh "jenkins@192.168.162.7:docker -H ssh://docker@192.168.162.11 run -p 8000:8000 -d --name ivo5 ivoreg.com:5000/django_ivaylopetrov07" 
+                sh "docker -H ssh://docker@192.168.162.11 run -p 8000:8000 -d --name ivo8 ivoreg.com:5000/django_ivaylopetrov07" 
             }
         }
     }
